@@ -2,8 +2,8 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'org.fgiannesini'
+version '1.0'
 
 repositories {
     mavenCentral()
@@ -19,4 +19,18 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'VaccineTracker'
+        )
+    }
+    from {
+        configurations.compileClasspath.collect {
+            duplicatesStrategy DuplicatesStrategy.WARN
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
 }
