@@ -37,16 +37,6 @@ public class Doctolib {
         }
     }
 
-    public int getOfficeAvailabilities(Office office) {
-        var response = httpRequester.run(String.format("https://www.doctolib.fr/search_results/%d.json", office.id()));
-        try {
-            JsonNode jsonNode = this.objectMapper.readTree(response);
-            return jsonNode.findValue("total").asInt();
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public List<Availabilities> getAvailabilities(Office office) {
         String url = String.format("https://www.doctolib.fr/search_results/%d.json", office.id());
         var response = httpRequester.run(url);
