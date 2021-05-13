@@ -25,7 +25,7 @@ public class VaccineTracker extends TimerTask {
     public void run() {
         System.out.println(this.getClass().getSimpleName() + " run on " + LocalDateTime.now());
         var offices = doctolib.getOffices().stream()
-                .filter(office -> nearestCities.contains(office.getCity()))
+                .filter(office -> nearestCities.contains(office.city()))
                 .collect(Collectors.toList());
         for (Office office : offices) {
             int availabilities = doctolib.getOfficeAvailabilities(office);

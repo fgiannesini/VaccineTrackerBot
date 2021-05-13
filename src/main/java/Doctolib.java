@@ -36,7 +36,7 @@ public class Doctolib {
     }
 
     public int getOfficeAvailabilities(Office office) {
-        var response = httpRequester.run(String.format("https://www.doctolib.fr/search_results/%d.json", office.getId()));
+        var response = httpRequester.run(String.format("https://www.doctolib.fr/search_results/%d.json", office.id()));
         try {
             JsonNode jsonNode = this.objectMapper.readTree(response);
             return jsonNode.findValue("total").asInt();
@@ -46,6 +46,6 @@ public class Doctolib {
     }
 
     public void openLink(Office office) {
-        browser.openUrl(String.format("https://www.doctolib.fr%s", office.getLink()));
+        browser.openUrl(String.format("https://www.doctolib.fr%s", office.link()));
     }
 }
