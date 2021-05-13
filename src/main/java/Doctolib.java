@@ -3,9 +3,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Doctolib {
 
@@ -27,6 +25,16 @@ public class Doctolib {
                 officeList.add(new Office(doctor.findValue("id").asLong(), doctor.findValue("city").asText()));
             }
             return officeList;
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public int getOfficeAvailabilities(Office office) {
+        var response = httpRequester.run(String.format("https://www.doctolib.fr/search_results/%d.json", office.getId()));
+        try {
+            JsonNode jsonNode = this.objectMapper.readTree(response);
+            return jsonNode.findValue("total").asInt();
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }

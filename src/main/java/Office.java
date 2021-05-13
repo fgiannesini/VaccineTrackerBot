@@ -10,6 +10,10 @@ public final class Office {
         this.city = city;
     }
 
+    public long getId() {
+        return id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

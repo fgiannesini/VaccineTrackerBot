@@ -1,10 +1,7 @@
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -30,4 +27,27 @@ class DoctolibTest {
         assertThat(vaccineOffices).containsExactlyInAnyOrder(new Office(1268497, "Suresnes"), new Office(1666665, "Vernon"));
     }
 
+    @Test
+    void should_get_office_with_availabilities() throws URISyntaxException, IOException {
+        var httpRequester = mock(HttpRequester.class);
+
+        String response = Files.readString(Paths.get(Objects.requireNonNull(this.getClass().getClassLoader().getResource("doctolib-office-with-availabilities.json")).toURI()));
+        doReturn(response).when(httpRequester).run("https://www.doctolib.fr/search_results/1268151.json");
+
+        Doctolib doctolib = new Doctolib(httpRequester);
+        int availabilities = doctolib.getOfficeAvailabilities(new Office(1268151, "Athis-Mons"));
+        assertThat(availabilities).isEqualTo(33);
+    }
+
+    @Test
+    void should_get_office_without_availabilities() throws URISyntaxException, IOException {
+        var httpRequester = mock(HttpRequester.class);
+
+        String response = Files.readString(Paths.get(Objects.requireNonNull(this.getClass().getClassLoader().getResource("doctolib-office-without-availabilities.json")).toURI()));
+        doReturn(response).when(httpRequester).run("https://www.doctolib.fr/search_results/1268497.json");
+
+        Doctolib doctolib = new Doctolib(httpRequester);
+        int availabilities = doctolib.getOfficeAvailabilities(new Office(1268497, "Suresnes"));
+        assertThat(availabilities).isEqualTo(0);
+    }
 }
