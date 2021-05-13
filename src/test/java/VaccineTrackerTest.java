@@ -17,7 +17,7 @@ class VaccineTrackerTest {
         doReturn(List.of(new Availabilities(LocalDate.now(), 1))).when(doctolib).getAvailabilities(suresnes);
         doReturn(List.of(new Availabilities(LocalDate.now(), 1))).when(doctolib).getAvailabilities(vernon);
 
-        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, List.of("Suresnes", "Vernon"));
+        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, new CitiesScope(List.of("Suresnes", "Vernon")));
         vaccineTracker.run();
 
         verify(doctolib, times(1)).openLink(suresnes);
@@ -31,7 +31,7 @@ class VaccineTrackerTest {
         doReturn(List.of(suresnes)).when(doctolib).getOffices();
         doReturn(emptyList()).when(doctolib).getAvailabilities(suresnes);
 
-        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, List.of("Suresnes"));
+        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, new CitiesScope(List.of("Suresnes")));
         vaccineTracker.run();
 
         verify(doctolib, never()).openLink(any());
@@ -44,7 +44,7 @@ class VaccineTrackerTest {
         doReturn(List.of(suresnes)).when(doctolib).getOffices();
         doReturn(List.of(new Availabilities(LocalDate.now().plusDays(2), 1))).when(doctolib).getAvailabilities(suresnes);
 
-        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, List.of("Suresnes"));
+        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, new CitiesScope(List.of("Suresnes")));
         vaccineTracker.run();
 
         verify(doctolib, never()).openLink(any());
@@ -60,7 +60,7 @@ class VaccineTrackerTest {
         doReturn(List.of(new Availabilities(LocalDate.now(), 1))).when(doctolib).getAvailabilities(vernon);
         var nearestCities = List.of("Suresnes");
 
-        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, nearestCities);
+        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, new CitiesScope(nearestCities));
         vaccineTracker.run();
 
         verify(doctolib, times(1)).openLink(suresnes);

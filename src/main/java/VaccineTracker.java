@@ -9,23 +9,23 @@ public class VaccineTracker extends TimerTask {
     public static void main(String[] args) {
         Timer timer = new Timer();
         Doctolib doctolib = new Doctolib(new HttpRequester(), new Browser());
-        TimerTask task = new VaccineTracker(doctolib, List.of("Suresnes", "Nanterre", "Puteaux", "Saint-Cloud", "Neuilly-sur-Seine"));
+        TimerTask task = new VaccineTracker(doctolib, new CitiesScope(List.of("Suresnes", "Nanterre", "Puteaux", "Saint-Cloud", "Neuilly-sur-Seine")));
         timer.schedule(task, 1000, 60_000);
     }
 
     private final Doctolib doctolib;
-    private final List<String> nearestCities;
+    private final CitiesScope citiesScope;
 
-    public VaccineTracker(Doctolib doctolib, List<String> nearestCities) {
+    public VaccineTracker(Doctolib doctolib, CitiesScope citiesScope) {
         this.doctolib = doctolib;
-        this.nearestCities = nearestCities;
+        this.citiesScope = citiesScope;
     }
 
     @Override
     public void run() {
         System.out.println(this.getClass().getSimpleName() + " run on " + LocalDateTime.now());
         var offices = doctolib.getOffices().stream()
-                .filter(office -> nearestCities.contains(office.city()))
+                .filter(office -> citiesScope.isEligible(office.city()))
                 .collect(Collectors.toList());
         for (Office office : offices) {
             List<Availabilities> availabilities = doctolib.getAvailabilities(office).stream()
