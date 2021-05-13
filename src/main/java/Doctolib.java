@@ -22,7 +22,10 @@ public class Doctolib {
             JsonNode doctors = jsonNode.findValue("data").findValue("doctors");
             List<Office> officeList = new ArrayList<>();
             for (JsonNode doctor : doctors) {
-                officeList.add(new Office(doctor.findValue("id").asLong(), doctor.findValue("city").asText()));
+                officeList.add(new Office(
+                        doctor.findValue("id").asLong(),
+                        doctor.findValue("city").asText(),
+                        doctor.findValue("link").asText()));
             }
             return officeList;
         } catch (JsonProcessingException e) {
