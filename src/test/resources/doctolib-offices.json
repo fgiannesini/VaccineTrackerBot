@@ -1,0 +1,595 @@
+{
+  "data": {
+    "speciality": {
+      "id": 5494,
+      "name": "Vaccination COVID-19",
+      "slug": "vaccination-covid-19",
+      "search_results_priority": false,
+      "telehealth_core": false,
+      "vaccination": true,
+      "covid_vaccination_hcp_speciality": false
+    },
+    "doctors": [
+      {
+        "id": 1268497,
+        "is_directory": false,
+        "address": "2 Rue Carnot",
+        "city": "Suresnes",
+        "zipcode": "92150",
+        "link": "/centre-de-sante/suresnes/centre-de-vaccination-covid-suresnes",
+        "cloudinary_public_id": "jr0bthbpqrpocvd0xy7x",
+        "profile_id": 243005,
+        "exact_match": true,
+        "priority_speciality": false,
+        "first_name": null,
+        "last_name": "Centre de vaccination COVID - Suresnes",
+        "name_with_title": "Centre de vaccination COVID - Suresnes",
+        "speciality": null,
+        "organization_status": "Centre de santé",
+        "top_specialities": [
+          "6 salles de vaccination"
+        ],
+        "position": {
+          "lat": 48.8710554,
+          "lng": 2.225072
+        },
+        "place_id": null,
+        "telehealth": false
+      },
+      {
+        "id": 1666665,
+        "is_directory": false,
+        "address": "5 Rue Docteur Burnet",
+        "city": "Vernon",
+        "zipcode": "27200",
+        "link": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "cloudinary_public_id": "yi8utcksu8pfoiicsevb",
+        "profile_id": 240902,
+        "exact_match": null,
+        "priority_speciality": false,
+        "first_name": null,
+        "last_name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "name_with_title": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "speciality": null,
+        "organization_status": "Hôpital public",
+        "top_specialities": [
+          "3 salles de vaccination"
+        ],
+        "position": {
+          "lat": 49.0906012,
+          "lng": 1.4881288
+        },
+        "place_id": "practice-162966",
+        "telehealth": false
+      }
+    ],
+    "directory_doctors": [],
+    "search_filters_context": [
+      {
+        "label": "Motif de consultation",
+        "param_name": "ref_visit_motive_id",
+        "items": [
+          {
+            "name": "1re injection vaccin COVID-19 (AstraZeneca)",
+            "id": 7107
+          },
+          {
+            "name": "1re injection vaccin COVID-19 (Moderna)",
+            "id": 7005
+          },
+          {
+            "name": "1re injection vaccin COVID-19 (Pfizer-BioNTech)",
+            "id": 6970
+          },
+          {
+            "name": "2de injection vaccin COVID-19 (AstraZeneca)",
+            "id": 7108
+          },
+          {
+            "name": "2de injection vaccin COVID-19 (Moderna)",
+            "id": 7004
+          },
+          {
+            "name": "2de injection vaccin COVID-19 (Pfizer-BioNTech)",
+            "id": 6971
+          },
+          {
+            "name": "3e injection vaccin COVID-19 (Moderna)",
+            "id": 8193
+          },
+          {
+            "name": "3e injection vaccin COVID-19 (Pfizer-BioNTech)\t",
+            "id": 8192
+          },
+          {
+            "name": "Injection unique vaccin COVID-19 (Janssen)",
+            "id": 7945
+          }
+        ],
+        "value": null
+      },
+      {
+        "label": "Langues parlées",
+        "param_name": "language",
+        "items": [
+          {
+            "name": "Allemand",
+            "id": 5
+          },
+          {
+            "name": "Anglais",
+            "id": 2
+          },
+          {
+            "name": "Arabe",
+            "id": 9
+          },
+          {
+            "name": "Espagnol",
+            "id": 3
+          },
+          {
+            "name": "Italien",
+            "id": 4
+          },
+          {
+            "name": "Langue des signes",
+            "id": 74
+          },
+          {
+            "name": "Polonais",
+            "id": 15
+          },
+          {
+            "name": "Portugais",
+            "id": 6
+          },
+          {
+            "name": "Roumain",
+            "id": 14
+          },
+          {
+            "name": "Russe",
+            "id": 16
+          },
+          {
+            "name": "Turc",
+            "id": 29
+          }
+        ],
+        "value": null
+      }
+    ],
+    "place": {
+      "id": 7010,
+      "name": "Suresnes",
+      "slug": "suresnes",
+      "place_id": "ChIJ584OtMVk5kcR4DyLaMOCCwQ",
+      "position": {
+        "lat": 48.869798,
+        "lng": 2.219033
+      }
+    },
+    "telehealth_new_patient": false,
+    "directory_title": "D'autres salles de vaccination consultent à Suresnes",
+    "doctor_title": "Salle de vaccination à Suresnes : prenez rendez-vous en ligne",
+    "secondary_doctor_title": "Salle de vaccination dans les environs de Suresnes : prenez rendez-vous en ligne",
+    "prior_nearby_location_title": "translation missing: fr.profiles.doctors_results.title.other_results_nearby_location_prioritized_skill",
+    "non_prior_at_location_title": "translation missing: fr.profiles.doctors_results.title.other_results_at_location_unprioritized_skill",
+    "non_prior_nearby_location_title": "translation missing: fr.profiles.doctors_results.title.other_results_nearby_location_unprioritized_skill",
+    "has_more": true,
+    "search_scope": "speciality",
+    "is_hub": false,
+    "total_search_results": 214
+  },
+  "seo": {
+    "about_doctolib": {
+      "title": "À propos de Doctolib",
+      "links": [
+        {
+          "name": "Vaccination COVID-19",
+          "url": "/vaccination-covid-19",
+          "encoded": false,
+          "target": "_blank",
+          "hidden": false,
+          "key": "vaccination_covid"
+        },
+        {
+          "name": "Test COVID - Depistage",
+          "url": "/centre-depistage-covid",
+          "encoded": false,
+          "target": "_blank",
+          "hidden": false,
+          "key": "test_covid"
+        },
+        {
+          "name": "Test PCR",
+          "url": "/depistage-covid-19-pcr-prelevement-naso-pharynge",
+          "encoded": false,
+          "target": "_blank",
+          "hidden": false,
+          "key": "test_pcr"
+        },
+        {
+          "name": "Consultation vidéo - Téléconsultation",
+          "url": "/video_consultation",
+          "encoded": false,
+          "target": "_blank",
+          "key": "video_consultation"
+        },
+        {
+          "name": "À propos de nous",
+          "url": "https://about.doctolib.fr",
+          "target": "_self",
+          "encoded": true,
+          "key": "about_us"
+        },
+        {
+          "name": "Carrières",
+          "url": "https://careers.doctolib.fr?origin=footer",
+          "target": "_blank",
+          "encoded": true,
+          "key": "jobs"
+        },
+        {
+          "name": "Presse",
+          "url": "https://about.doctolib.fr/presse",
+          "target": "_self",
+          "encoded": true,
+          "key": "press"
+        },
+        {
+          "name": "Besoin d'aide ?",
+          "url": "/help?origin=help-desktop",
+          "target": "_self",
+          "encoded": true,
+          "key": "help"
+        },
+        {
+          "name": "Notifications frauduleuses (tentatives de phishing)",
+          "url": "/help?origin=help-desktop#section=6\u0026article=4",
+          "target": "_self",
+          "encoded": false,
+          "key": "phishing"
+        },
+        {
+          "name": "Doctolib Deutschland",
+          "url": "https://www.doctolib.de",
+          "target": "_self",
+          "encoded": true,
+          "key": "doctolib_de"
+        }
+      ]
+    },
+    "about_doctolib_pro": {
+      "title": "Pour les professionnels de santé",
+      "links": [
+        {
+          "name": "Logiciel de gestion Doctolib Pro",
+          "url": "https://info.doctolib.fr?origin=home-footer\u0026utm_button=footer\u0026utm_content-group=search_results_page\u0026utm_page-url=https%3A%2F%2Fwww.doctolib.fr%2Fvaccination-covid-19%2Fsuresnes\u0026utm_website=doctolib_patients",
+          "target": "_blank",
+          "encoded": true,
+          "key": "bms"
+        },
+        {
+          "name": "Doctolib Community",
+          "url": "https://community.doctolib.com/",
+          "target": "_blank",
+          "encoded": true,
+          "key": "community"
+        }
+      ]
+    },
+    "popular_links": {
+      "title": "Recherches fréquentes",
+      "links": [
+        {
+          "name": "Chirurgien-dentiste Paris",
+          "url": "/dentiste/paris"
+        },
+        {
+          "name": "Médecin généraliste Paris",
+          "url": "/medecin-generaliste/paris"
+        },
+        {
+          "name": "Pédiatre Paris",
+          "url": "/pediatre/paris"
+        },
+        {
+          "name": "Gynécologue médical et obstétrique Paris",
+          "url": "/gynecologue/paris"
+        },
+        {
+          "name": "Ophtalmologue Paris",
+          "url": "/ophtalmologue/paris"
+        },
+        {
+          "name": "Dermatologue et vénérologue Paris",
+          "url": "/dermatologue/paris"
+        },
+        {
+          "name": "Ostéopathe Paris",
+          "url": "/osteopathe/paris"
+        },
+        {
+          "name": "Masseur-kinésithérapeute Paris",
+          "url": "/masseur-kinesitherapeute/paris"
+        },
+        {
+          "name": "Pédicure-podologue Paris",
+          "url": "/pedicure-podologue/paris"
+        },
+        {
+          "name": "Sage-femme Paris",
+          "url": "/sage-femme/paris"
+        }
+      ]
+    },
+    "neighborhood_links": {
+      "title": "Affiner par arrondissement",
+      "links": []
+    },
+    "speciality_directory_links": {
+      "title": null,
+      "main_link": null,
+      "links": null
+    },
+    "sublocality_directory_links": {
+      "title": null,
+      "main_link": null,
+      "links": null
+    },
+    "similar_links": {
+      "title": "Recherches associées",
+      "links": [
+        {
+          "name": "Vaccination COVID-19 Nanterre",
+          "url": "/vaccination-covid-19/nanterre"
+        },
+        {
+          "name": "Vaccination COVID-19 Issy-les-Moulineaux",
+          "url": "/vaccination-covid-19/issy-les-moulineaux"
+        },
+        {
+          "name": "Vaccination COVID-19 Meudon",
+          "url": "/vaccination-covid-19/meudon"
+        },
+        {
+          "name": "Vaccination COVID-19 Paris",
+          "url": "/vaccination-covid-19/paris"
+        }
+      ]
+    },
+    "public_content": {
+      "title": "Vaccination COVID-19 : ce qu'il faut savoir",
+      "text": null
+    }
+  },
+  "meta": {
+    "title": "Vaccination COVID-19 à Suresnes 92150 : Rendez-vous par Internet sous 24h - Doctolib",
+    "description": "Trouvez rapidement un spécialiste en salle de vaccination à Suresnes ou un professionnel de santé pratiquant des actes de vaccination covid-19 et prenez rendez-vous gratuitement en ligne en quelques clics",
+    "next": "/vaccination-covid-19/suresnes?force_max_limit=2\u0026page=2\u0026ref_visit_motive_ids%5B%5D=6970%2C7005",
+    "page_type": "searchResultsSpecialityPlace"
+  },
+  "jsonld": {
+    "placeholder_image": {
+      "@context": "http://schema.org/",
+      "@type": "MedicalWebPage",
+      "image": "https://assets.doctolib.fr/img/default-seo-icon.png",
+      "primaryImageOfPage": {
+        "@context": "http://schema.org/",
+        "@type": "ImageObject",
+        "contentUrl": "https://assets.doctolib.fr/img/default-seo-icon.png",
+        "description": "Vaccination COVID-19 à Suresnes 92150 : Rendez-vous par Internet sous 24h - Doctolib"
+      }
+    },
+    "doctors": [
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "Centre de vaccination COVID - Suresnes",
+        "medicalSpecialty": "Centre de santé",
+        "legalName": null,
+        "url": "/centre-de-sante/suresnes/centre-de-vaccination-covid-suresnes",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Centre de vaccination de Suresnes",
+          "streetAddress": "2 Rue Carnot",
+          "postalCode": "92150",
+          "addressLocality": "Suresnes"
+        },
+        "paymentAccepted": "Cash, Check, Credit card"
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Centre vaccinal Vernon",
+          "streetAddress": "5 Rue Docteur Burnet",
+          "postalCode": "27200",
+          "addressLocality": "Vernon"
+        },
+        "paymentAccepted": ""
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Collège César Lemaître",
+          "streetAddress": "13 Rue Saint-Lazare",
+          "postalCode": "27200",
+          "addressLocality": "Vernon"
+        },
+        "paymentAccepted": ""
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Salle polyvalente (Gisors)",
+          "streetAddress": "27140 Rue du Faubourg de Neaufles",
+          "postalCode": "27140",
+          "addressLocality": "Gisors"
+        },
+        "paymentAccepted": ""
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Salle des fêtes (Les Andelys)",
+          "streetAddress": "28 Avenue du Gén de Gaulle",
+          "postalCode": "27700",
+          "addressLocality": "Les Andelys"
+        },
+        "paymentAccepted": ""
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Salle Clos Mulot (Saint-André-de-l'Eure)",
+          "streetAddress": "6 Rue de Dreux",
+          "postalCode": "27220",
+          "addressLocality": "Saint-André-de-l'Eure"
+        },
+        "paymentAccepted": ""
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Logipôle CH Evreux",
+          "streetAddress": "Rue Léon Schwartzenberg",
+          "postalCode": "27000",
+          "addressLocality": "Évreux"
+        },
+        "paymentAccepted": ""
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Halle des expositions (Evreux)",
+          "streetAddress": "26 Avenue du Maréchal Foch",
+          "postalCode": "27000",
+          "addressLocality": "Évreux"
+        },
+        "paymentAccepted": ""
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Halle Expo (Evreux)",
+          "streetAddress": "26 Avenue du Maréchal Foch",
+          "postalCode": "27000",
+          "addressLocality": "Évreux"
+        },
+        "paymentAccepted": ""
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Hospital",
+        "name": "GHT Eure-Seine \u0026 Pays d’Ouche - Centres de vaccination Covid-19",
+        "medicalSpecialty": "Hôpital public",
+        "legalName": null,
+        "url": "/hopital-public/evreux/ch-eure-seine-centre-de-vaccination-covid-vacci-covid-27",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "Centre vaccinal Evreux",
+          "streetAddress": "Rue Léon Schwartzenberg",
+          "postalCode": "27000",
+          "addressLocality": "Évreux"
+        },
+        "paymentAccepted": ""
+      }
+    ],
+    "breadcrumbs": {
+      "@context": "http://schema.org/",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Thing",
+            "name": "Doctolib",
+            "id": "Doctolib",
+            "url": null
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Thing",
+            "name": "Vaccination COVID-19",
+            "id": "Vaccination COVID-19",
+            "url": "/vaccination-covid-19"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Thing",
+            "name": "Hauts-de-Seine",
+            "id": "Hauts-de-Seine",
+            "url": "/vaccination-covid-19/hauts-de-seine"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Thing",
+            "name": "Suresnes",
+            "id": "Suresnes",
+            "url": null
+          }
+        }
+      ]
+    }
+  }
+}
