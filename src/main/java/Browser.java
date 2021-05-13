@@ -10,7 +10,7 @@ public class Browser {
             try {
                 Desktop.getDesktop().browse(new URI(url));
             } catch (IOException | URISyntaxException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException("An error occurred while opening the browser with url " + url + ".",e);
             }
         }
     }

@@ -22,7 +22,8 @@ public class Doctolib {
     }
 
     public List<Office> getOffices() {
-        var response = httpRequester.run("https://www.doctolib.fr/vaccination-covid-19/suresnes?force_max_limit=2&ref_visit_motive_ids[]=6970,7005");
+        String url = "https://www.doctolib.fr/vaccination-covid-19/suresnes?force_max_limit=2&ref_visit_motive_ids[]=6970,7005";
+        var response = httpRequester.run(url);
         try {
             JsonNode jsonNode = this.objectMapper.readTree(response);
             return toStream(jsonNode.findValue("data").findValue("doctors").iterator())
@@ -32,7 +33,7 @@ public class Doctolib {
                             doctor.findValue("link").asText()))
                     .collect(Collectors.toList());
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("An error occurred while retrieving the office list. Is url " + url + " valid ?",e);
         }
     }
 
@@ -47,7 +48,8 @@ public class Doctolib {
     }
 
     public List<Availabilities> getAvailabilities(Office office) {
-        var response = httpRequester.run(String.format("https://www.doctolib.fr/search_results/%d.json", office.id()));
+        String url = String.format("https://www.doctolib.fr/search_results/%d.json", office.id());
+        var response = httpRequester.run(url);
         try {
             JsonNode jsonNode = this.objectMapper.readTree(response);
             return toStream(jsonNode.findValue("availabilities").iterator())
@@ -57,7 +59,7 @@ public class Doctolib {
                     ))
                     .collect(Collectors.toList());
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("An error occurred while retrieving the office list. Is url " + url + " valid ?", e);
         }
     }
 
