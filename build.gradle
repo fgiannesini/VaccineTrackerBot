@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.beust:jcommander:+'
     implementation 'com.fasterxml.jackson.core:jackson-databind:+'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:+'
     testImplementation 'org.assertj:assertj-core:+'
