@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 import java.util.Objects;
 
@@ -43,8 +45,11 @@ class DoctolibTest {
         doReturn(response).when(httpRequester).run("https://www.doctolib.fr/search_results/1268151.json");
 
         Doctolib doctolib = new Doctolib(httpRequester, browser);
-        int availabilities = doctolib.getOfficeAvailabilities(new Office(1268151, "Athis-Mons", "/link"));
-        assertThat(availabilities).isEqualTo(33);
+        var availabilities = doctolib.getAvailabilities(new Office(1268151, "Athis-Mons", "/link"));
+        assertThat(availabilities).containsExactlyInAnyOrder(
+                new Availabilities(LocalDate.of(2021, Month.MAY, 13), 0),
+                new Availabilities(LocalDate.of(2021, Month.MAY, 14), 33)
+        );
     }
 
     @Test
@@ -53,8 +58,8 @@ class DoctolibTest {
         doReturn(response).when(httpRequester).run("https://www.doctolib.fr/search_results/1268497.json");
 
         Doctolib doctolib = new Doctolib(httpRequester, browser);
-        int availabilities = doctolib.getOfficeAvailabilities(new Office(1268497, "Suresnes", "/link"));
-        assertThat(availabilities).isEqualTo(0);
+        var availabilities = doctolib.getAvailabilities(new Office(1268497, "Suresnes", "/link"));
+        assertThat(availabilities).isEmpty();
     }
 
     @Test

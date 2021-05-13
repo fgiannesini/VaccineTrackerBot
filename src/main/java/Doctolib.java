@@ -2,8 +2,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class Doctolib {
 
@@ -21,15 +25,12 @@ public class Doctolib {
         var response = httpRequester.run("https://www.doctolib.fr/vaccination-covid-19/suresnes?force_max_limit=2&ref_visit_motive_ids[]=6970,7005");
         try {
             JsonNode jsonNode = this.objectMapper.readTree(response);
-            JsonNode doctors = jsonNode.findValue("data").findValue("doctors");
-            List<Office> officeList = new ArrayList<>();
-            for (JsonNode doctor : doctors) {
-                officeList.add(new Office(
-                        doctor.findValue("id").asLong(),
-                        doctor.findValue("city").asText(),
-                        doctor.findValue("link").asText()));
-            }
-            return officeList;
+            return toStream(jsonNode.findValue("data").findValue("doctors").iterator())
+                    .map(doctor -> new Office(
+                            doctor.findValue("id").asLong(),
+                            doctor.findValue("city").asText(),
+                            doctor.findValue("link").asText()))
+                    .collect(Collectors.toList());
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
@@ -43,6 +44,26 @@ public class Doctolib {
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public List<Availabilities> getAvailabilities(Office office) {
+        var response = httpRequester.run(String.format("https://www.doctolib.fr/search_results/%d.json", office.id()));
+        try {
+            JsonNode jsonNode = this.objectMapper.readTree(response);
+            return toStream(jsonNode.findValue("availabilities").iterator())
+                    .map(availability -> new Availabilities(
+                            LocalDate.parse(availability.findValue("date").asText()),
+                            (int) toStream(availability.findValue("slots").elements()).count()
+                    ))
+                    .collect(Collectors.toList());
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private <T> Stream<T> toStream(Iterator<T> iterator) {
+        Iterable<T> iterable = () -> iterator;
+        return StreamSupport.stream(iterable.spliterator(), false);
     }
 
     public void openLink(Office office) {
