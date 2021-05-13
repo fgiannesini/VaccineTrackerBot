@@ -28,9 +28,13 @@ public class VaccineTracker extends TimerTask {
                 .filter(office -> nearestCities.contains(office.city()))
                 .collect(Collectors.toList());
         for (Office office : offices) {
-            int availabilities = doctolib.getOfficeAvailabilities(office);
-            if (availabilities > 0) {
-                System.out.println("Open " + office + " as " + availabilities + " slots are available");
+            List<Availabilities> availabilities = doctolib.getAvailabilities(office).stream()
+                    .filter(Availabilities::isBeforeTwoDays)
+                    .collect(Collectors.toList());
+            boolean hasSlots = availabilities.stream()
+                    .anyMatch(Availabilities::hasSlots);
+            if (hasSlots) {
+                System.out.println("Open " + office + " for availabilities " + availabilities);
                 doctolib.openLink(office);
             }
         }
