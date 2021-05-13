@@ -4,12 +4,15 @@ import java.util.stream.Collectors;
 public class VaccineTracker {
 
     private final Doctolib doctolib;
+    private final List<String> nearestCities;
 
-    public VaccineTracker(Doctolib doctolib) {
+    public VaccineTracker(Doctolib doctolib, List<String> nearestCities) {
         this.doctolib = doctolib;
+        this.nearestCities = nearestCities;
     }
 
-    public void run(List<String> nearestCities) {
+
+    public void run() {
         var offices = doctolib.getOffices().stream()
                 .filter(office -> nearestCities.contains(office.getCity()))
                 .collect(Collectors.toList());

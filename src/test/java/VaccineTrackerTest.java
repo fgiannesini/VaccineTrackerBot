@@ -15,8 +15,8 @@ class VaccineTrackerTest {
         doReturn(2).when(doctolib).getOfficeAvailabilities(suresnes);
         doReturn(1).when(doctolib).getOfficeAvailabilities(vernon);
 
-        VaccineTracker vaccineTracker = new VaccineTracker(doctolib);
-        vaccineTracker.run(List.of("Suresnes", "Vernon"));
+        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, List.of("Suresnes", "Vernon"));
+        vaccineTracker.run();
 
         verify(doctolib, times(1)).openLink(suresnes);
         verify(doctolib, times(1)).openLink(vernon);
@@ -29,8 +29,8 @@ class VaccineTrackerTest {
         doReturn(List.of(suresnes)).when(doctolib).getOffices();
         doReturn(0).when(doctolib).getOfficeAvailabilities(suresnes);
 
-        VaccineTracker vaccineTracker = new VaccineTracker(doctolib);
-        vaccineTracker.run(List.of("Suresnes"));
+        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, List.of("Suresnes"));
+        vaccineTracker.run();
 
         verify(doctolib, never()).openLink(any());
     }
@@ -46,8 +46,8 @@ class VaccineTrackerTest {
         doReturn(1).when(doctolib).getOfficeAvailabilities(vernon);
         var nearestCities = List.of("Suresnes");
 
-        VaccineTracker vaccineTracker = new VaccineTracker(doctolib);
-        vaccineTracker.run(nearestCities);
+        VaccineTracker vaccineTracker = new VaccineTracker(doctolib, nearestCities);
+        vaccineTracker.run();
 
         verify(doctolib, times(1)).openLink(suresnes);
         verify(doctolib, never()).openLink(vernon);
