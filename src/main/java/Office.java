@@ -20,6 +20,10 @@ public final class Office {
         return link;
     }
 
+    public String getCity() {
+        return city;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
