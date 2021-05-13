@@ -16,6 +16,10 @@ public final class Office {
         return id;
     }
 
+    public String getLink() {
+        return link;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

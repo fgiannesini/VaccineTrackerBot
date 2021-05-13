@@ -9,9 +9,11 @@ public class Doctolib {
 
     private final ObjectMapper objectMapper;
     private final HttpRequester httpRequester;
+    private final Browser browser;
 
-    public Doctolib(HttpRequester httpRequester) {
+    public Doctolib(HttpRequester httpRequester, Browser browser) {
         this.httpRequester = httpRequester;
+        this.browser = browser;
         this.objectMapper = new ObjectMapper();
     }
 
@@ -43,4 +45,7 @@ public class Doctolib {
         }
     }
 
+    public void openLink(Office office) {
+        browser.openUrl(String.format("https://www.doctolib.fr%s", office.getLink()));
+    }
 }
