@@ -3,7 +3,7 @@
 Request doctolib search page to get vaccine offices around a location. Open a browser page if vaccine slots are open
 before two days
 
-### Configuration
+### Options
 
 ```
 Usage: VaccineTrackerBot [options]
@@ -19,11 +19,15 @@ Usage: VaccineTrackerBot [options]
       Default: 60
 ```
 
-### Example
+### Run as executable
 
-```
-java -jar VaccineTrackerBot-1.0.jar 
-      -location "Paris" 
-      -period 20 
-      -cities "Paris,Suresnes,Nanterre,Puteaux,Saint-Cloud,Neuilly-sur-Seine"
-```
+Download (from release tab) and install VaccineTrackerBot-1.0.exe Installation folder is C:\Program
+Files\VaccineTrackerBot Then run this command in a console:
+
+`VaccineTrackerBot.exe -location "Paris"`
+
+### Run as a jar
+
+Build the jar, it can be executed with this console command :
+
+`java -jar VaccineTrackerBot-1.0.jar -location "Paris"`
