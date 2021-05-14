@@ -1,10 +1,29 @@
 # VaccineTrackerBot
 
-Request doctolib vaccine offices around Suresnes.
+Request doctolib search page to get vaccine offices around a location. Open a browser page if vaccine slots are open
+before two days
 
-Open a browser page if vaccine slots are open before two days
+### Configuration
 
-### Configuration:
-- Period of run (hardcoded as 1 minute)
-- Eligible cities (harcoded list in the main class)
-- Doctolib search parameters (harcoded in the Doctolib class, ids in the urls represents location) 
+```
+Usage: VaccineTrackerBot [options]
+  Options:
+  * -location
+      City where you live. Example : "Paris"
+    -cities
+      Comma-separated list of cities eligible. If this parameter is not set 
+      all cities are eligible. Example: "Paris,Antony"
+      Default: []
+    -period
+      Period to check doctolib (in second). Example: 60
+      Default: 60
+```
+
+### Example
+
+```
+java -jar VaccineTrackerBot-1.0.jar 
+      -location "Paris" 
+      -period 20 
+      -cities "Paris,Suresnes,Nanterre,Puteaux,Saint-Cloud,Neuilly-sur-Seine"
+```
