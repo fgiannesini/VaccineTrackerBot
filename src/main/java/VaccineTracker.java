@@ -7,10 +7,14 @@ import java.util.stream.Collectors;
 public class VaccineTracker extends TimerTask {
 
     public static void main(String[] args) {
-        Timer timer = new Timer();
-        Doctolib doctolib = new Doctolib(new HttpRequester(), new Browser(), "Suresnes");
-        TimerTask task = new VaccineTracker(doctolib, new CitiesScope(List.of("Suresnes", "Nanterre", "Puteaux", "Saint-Cloud", "Neuilly-sur-Seine")));
-        timer.schedule(task, 1000, 60_000);
+        CommandParameters.from(args)
+                .ifPresent(commandParameters -> {
+                    Doctolib doctolib = new Doctolib(new HttpRequester(), new Browser(), commandParameters.location());
+                    TimerTask task = new VaccineTracker(doctolib, new CitiesScope(commandParameters.cities()));
+
+                    Timer timer = new Timer();
+                    timer.schedule(task, 1000, commandParameters.period() * 1000);
+                });
     }
 
     private final Doctolib doctolib;
