@@ -14,15 +14,17 @@ public class Doctolib {
     private final ObjectMapper objectMapper;
     private final HttpRequester httpRequester;
     private final Browser browser;
+    private final String location;
 
-    public Doctolib(HttpRequester httpRequester, Browser browser) {
+    public Doctolib(HttpRequester httpRequester, Browser browser, String location) {
         this.httpRequester = httpRequester;
         this.browser = browser;
+        this.location = location;
         this.objectMapper = new ObjectMapper();
     }
 
     public List<Office> getOffices() {
-        String url = "https://www.doctolib.fr/vaccination-covid-19/suresnes?force_max_limit=2&ref_visit_motive_ids[]=6970,7005";
+        String url = String.format("https://www.doctolib.fr/vaccination-covid-19/%s?force_max_limit=2&ref_visit_motive_ids[]=6970,7005", location.toLowerCase());
         var response = httpRequester.run(url);
         try {
             JsonNode jsonNode = this.objectMapper.readTree(response);

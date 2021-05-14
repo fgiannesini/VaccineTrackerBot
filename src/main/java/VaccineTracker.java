@@ -8,7 +8,7 @@ public class VaccineTracker extends TimerTask {
 
     public static void main(String[] args) {
         Timer timer = new Timer();
-        Doctolib doctolib = new Doctolib(new HttpRequester(), new Browser());
+        Doctolib doctolib = new Doctolib(new HttpRequester(), new Browser(), "Suresnes");
         TimerTask task = new VaccineTracker(doctolib, new CitiesScope(List.of("Suresnes", "Nanterre", "Puteaux", "Saint-Cloud", "Neuilly-sur-Seine")));
         timer.schedule(task, 1000, 60_000);
     }
