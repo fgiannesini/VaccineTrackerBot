@@ -27,7 +27,8 @@ public class VaccineTracker extends TimerTask {
 
     @Override
     public void run() {
-        System.out.println(this.getClass().getSimpleName() + " run on " + LocalDateTime.now());
+        System.out.println(this.getClass().getSimpleName() + " start running at " + LocalDateTime.now());
+        long start = System.nanoTime();
         var offices = doctolib.getOffices().stream()
                 .filter(office -> citiesScope.isEligible(office.city()))
                 .collect(Collectors.toList());
@@ -42,6 +43,7 @@ public class VaccineTracker extends TimerTask {
                 doctolib.openLink(office);
             }
         }
+        System.out.println("Run finished in " + (System.nanoTime() - start) / Math.pow(10, 6) + " ms");
     }
 
 }
