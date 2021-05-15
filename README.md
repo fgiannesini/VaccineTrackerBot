@@ -1,7 +1,8 @@
 # VaccineTrackerBot
 
-Request doctolib search page to get vaccine offices around a location. Open a browser page if vaccine slots are open
-before two days
+Request doctolib search page to get vaccine offices around a location. 
+
+Open a browser page if vaccine slots are available before two days
 
 ### Options
 
@@ -21,8 +22,11 @@ Usage: VaccineTrackerBot [options]
 
 ### Run as executable
 
-Download (from release tab) and install VaccineTrackerBot-1.0.exe Installation folder is C:\Program
-Files\VaccineTrackerBot Then run this command in a console:
+Download (from release tab) and install VaccineTrackerBot-1.0.exe
+
+Installation folder is "C:\Program Files\VaccineTrackerBot"
+
+Then run this command in a console:
 
 `VaccineTrackerBot.exe -location "Paris"`
 
